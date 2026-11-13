@@ -20,15 +20,6 @@ const revealSelectors = [
 
 export default function HomeMotion() {
   useEffect(() => {
-    window.history.scrollRestoration = "manual";
-    document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo(0, 0);
-    requestAnimationFrame(() => {
-      document.documentElement.style.removeProperty("scroll-behavior");
-    });
-  }, []);
-
-  useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!("IntersectionObserver" in window)) return;
 

@@ -23,6 +23,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
+            history.scrollRestoration = "manual";
+            if (location.hash) {
+              history.replaceState(history.state, "", location.pathname + location.search);
+            }
+            window.addEventListener("pageshow", () => {
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+            }, { once: true });
+          }
+        ` }} />
+      </head>
       <body className="antialiased">
         <PageLoader />
         {children}
