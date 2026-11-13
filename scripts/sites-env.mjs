@@ -12,7 +12,7 @@ process.env.WRANGLER_LOG_PATH ||= path.join(runtimeRoot, "wrangler/logs");
 process.env.WRANGLER_REGISTRY_PATH ||= path.join(runtimeRoot, "wrangler/dev-registry");
 process.env.MINIFLARE_REGISTRY_PATH ||= path.join(runtimeRoot, "wrangler/registry");
 
-process.chdir(projectRoot);
+if (path.resolve(process.cwd()) !== path.resolve(projectRoot)) process.chdir(projectRoot);
 for (const directory of [
   path.dirname(process.env.WRANGLER_LOG_PATH),
   process.env.WRANGLER_REGISTRY_PATH,
