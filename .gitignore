@@ -1,0 +1,48 @@
+# Dependencies
+/node_modules/
+/.pnp
+.pnp.*
+
+# Build output and framework caches
+/.next/
+/.next-*/
+/.vinext/
+/dist/
+/out/
+/build/
+
+# Local databases and runtime state
+/.wrangler/
+/.sites-runtime/
+/.agents/
+/.codex/
+/work/
+/outputs/
+
+# Vercel local configuration
+.vercel/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and debug files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Private keys
+*.pem
+*.key
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript generated files
+next-env.d.ts
