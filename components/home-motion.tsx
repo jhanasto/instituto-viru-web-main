@@ -2,37 +2,47 @@
 
 import { useEffect } from "react";
 
-const homeRevealSelector = [
+const revealSelectors = [
   ".hero-copy",
   ".hero-foot",
-  ".intro h2",
+  ".intro-title",
   ".intro-visual",
   ".intro > p",
   ".career-area .head",
   ".career-grid .career",
-  ".benefit-copy",
-  ".benefit-grid .benefit",
-  ".contact-copy",
+  ".news .head",
+  ".news-card",
   ".contact .map",
+  ".contact-copy",
+  ".footer > div",
+  ".foot-bottom",
 ].join(",");
 
 export default function HomeMotion() {
   useEffect(() => {
-    const targets = document.querySelectorAll<HTMLElement>(homeRevealSelector);
-    if (!targets.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    window.history.scrollRestoration = "manual";
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      document.documentElement.style.removeProperty("scroll-behavior");
+    });
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!("IntersectionObserver" in window)) return;
 
+    const targets = document.querySelectorAll<HTMLElement>(revealSelectors);
     targets.forEach((element) => element.setAttribute("data-home-reveal", ""));
     document.documentElement.dataset.homeMotion = "ready";
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -32px 0px" });
+    }, { threshold: 0.08, rootMargin: "0px 0px -48px 0px" });
 
     targets.forEach((element) => observer.observe(element));
     return () => {

@@ -90,3 +90,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+.content {
+  padding-top: 112px;
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding-top: 90px;
+  }
+
+}

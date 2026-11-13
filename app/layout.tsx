@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./career-detail.css";
 import HomeMotion from "../components/home-motion";
+import PageLoader from "../components/page-loader";
 
 export const metadata: Metadata = {
   title: "IES Tecnológico Virú | Educación superior tecnológica",
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="antialiased">
+        <PageLoader />
         {children}
         <HomeMotion />
       </body>

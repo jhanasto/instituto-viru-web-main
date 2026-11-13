@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import { careers } from "../../lib/careers";
+import SiteHeader from "../site-header";
 import styles from "./autoridades.module.css";
 
 export const metadata: Metadata = {
@@ -17,11 +18,16 @@ const authorities: Authority[] = [
     role: "Coordinación de carrera",
     logo,
   })),
+  { name: "Oficinista (tesorero)", role: "Equipo de apoyo institucional" },
+  { name: "Bibliotecario", role: "Equipo de apoyo institucional" },
+  { name: "Responsable de cómputo", role: "Equipo de apoyo institucional" },
+  { name: "Asistente de taller", role: "Equipo de apoyo institucional" },
 ];
 
 export default function AuthoritiesPage() {
   return (
     <main className={styles.page}>
+      <SiteHeader />
       <div className={styles.content}>
         <a className={styles.back} href="/">
           <ArrowLeft size={16} aria-hidden="true" />
