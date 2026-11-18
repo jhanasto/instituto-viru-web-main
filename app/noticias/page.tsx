@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
-import { NewsCard, NewsPlaceholder, newsPlaceholderCount } from '../news-card';
 import SiteHeader from "../site-header";
+import NewsFilter from "./news-filter";
 import { newsItems } from "../../lib/news";
 import styles from "./noticias.module.css";
 
@@ -19,16 +19,8 @@ export default function NewsPage() {
         <header className={styles.heading}>
           <span>ACTUALIDAD IESTP VIRÚ</span>
           <h1>Todas las noticias</h1>
-          <p>Conoce las novedades y actividades de nuestra comunidad educativa.</p>
         </header>
-        <div className={styles.cards + " news"}>
-          <div className={styles.grid + " news-grid"}>
-            {newsItems.map((news) => <NewsCard key={news.slug} news={news} />)}
-            {Array.from({ length: newsPlaceholderCount }, (_, index) => (
-              <NewsPlaceholder key={index} index={index} />
-            ))}
-          </div>
-        </div>
+        <NewsFilter newsItems={newsItems} />
       </div>
     </main>
   );

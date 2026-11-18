@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const revealSelectors = [
   ".hero-copy",
@@ -12,13 +13,26 @@ const revealSelectors = [
   ".career-grid .career",
   ".news .head",
   ".news-card",
+  ".news-empty-card",
   ".contact .map",
   ".contact-copy",
   ".footer > div",
   ".foot-bottom",
+  "main:not(.career-detail) > section",
+  "main:not(.career-detail) > article",
+  "main:not(.career-detail) > article > img",
+  "main:not(.career-detail) > article > div > *",
+  "main:not(.career-detail) > div[class] > header",
+  "main:not(.career-detail) > div[class] > section",
+  "main:not(.career-detail) > div[class] > article",
+  "main:not(.career-detail) > div[class] > div[class]",
+  "main:not(.career-detail) > div[class] > ul > li",
+  "main:not(.career-detail) > section > ul > li",
 ].join(",");
 
 export default function HomeMotion() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!("IntersectionObserver" in window)) return;
@@ -44,7 +58,7 @@ export default function HomeMotion() {
         element.classList.remove("is-visible");
       });
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

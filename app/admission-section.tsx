@@ -1,22 +1,33 @@
-import { ArrowRight, CalendarDays, Send } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, CalendarDays, MapPin, Send, Wrench } from "lucide-react";
 import { careers } from "../lib/careers";
 
 export default function AdmissionSection() {
   return (
     <section className="admission" id="admision">
-      <div className="admission-inner wrap">
-        <div className="admission-heading">
+      <div className="admission-content wrap">
+        <a className="admission-back" href="/"><ArrowLeft size={16} aria-hidden="true" />Volver al inicio</a>
+        <header className="admission-page-heading">
           <span className="eyebrow">ADMISIÓN IESTP VIRÚ</span>
-          <h2>Empieza aquí tu<br /><i>futuro profesional.</i></h2>
-          <p>Prepárate para estudiar una carrera profesional en el Instituto de Educación Superior Tecnológico Público Virú.</p>
-        </div>
+          <h1>Admisión 2027</h1>
+        </header>
+        <div className="admission-inner">
+          <aside className="admission-intro">
+            <span className="admission-intro-kicker">Da el siguiente paso</span>
+            <h2>Tu futuro profesional empieza en Virú.</h2>
+            <p>Conoce el proceso de admisión y elige una carrera tecnológica para desarrollar tu futuro profesional.</p>
+            <ul className="admission-highlights">
+              <li><BookOpen size={19} aria-hidden="true" /><span>Programas profesionales para distintos sectores productivos</span></li>
+              <li><Wrench size={19} aria-hidden="true" /><span>Aprendizaje técnico con orientación práctica</span></li>
+              <li><MapPin size={19} aria-hidden="true" /><span>Formación en el Instituto de Educación Superior Tecnológico Público Virú</span></li>
+            </ul>
+          </aside>
         <article className="admission-card">
           <div className="admission-card-title">
             <CalendarDays aria-hidden="true" />
-            <div><span>PRÓXIMO PROCESO DE ADMISIÓN</span><h3>Examen de admisión 2027</h3></div>
+            <div><span>PRÓXIMO PROCESO</span><h3>Examen de admisión</h3></div>
           </div>
-          <div className="admission-date"><span>Inscripciones abiertas desde</span><strong>el 04 de enero de 2027</strong></div>
-          <p>Elige la carrera que quieres estudiar:</p>
+          <div className="admission-date"><span>Inscripciones abiertas desde</span><strong>04 de enero de 2027</strong></div>
+          <p className="admission-career-label">Elige la carrera que quieres estudiar</p>
           <ul>{careers.map((career) => <li key={career.slug}>{career.title}</li>)}</ul>
           <details className="registration-disclosure">
             <summary className="btn primary admission-submit">Inscribirse <ArrowRight size={18} /></summary>
@@ -44,6 +55,7 @@ export default function AdmissionSection() {
             </div>
           </details>
         </article>
+        </div>
       </div>
     </section>
   );

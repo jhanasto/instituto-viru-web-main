@@ -31,7 +31,6 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
           <h1>{news.title}</h1>
           <p className={styles.lead}>{news.excerpt}</p>
           {news.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          <a className={styles.backToNews} href="/noticias"><ArrowLeft size={16} aria-hidden="true" />Ver todas las noticias</a>
         </div>
       </article>
     </main>
