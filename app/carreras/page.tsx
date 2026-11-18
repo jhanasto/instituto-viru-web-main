@@ -29,7 +29,6 @@ export default function CareersPage() {
               <a className={styles.card} href={`/carreras/${career.slug}`}>
                 <div className={styles.image}>
                   <img className={styles.careerLogo} src={career.logo} alt={`Logo de ${career.title}`} loading="lazy" />
-                  <span className={styles.duration}>{career.duration} de formación</span>
                 </div>
                 <div className={styles.caption}>
                   <h2>{career.title}</h2>

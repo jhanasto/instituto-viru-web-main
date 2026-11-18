@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, BookOpen, CalendarDays, MapPin, Send, Wrench } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Send } from "lucide-react";
 import { careers } from "../lib/careers";
 
 export default function AdmissionSection() {
@@ -14,12 +14,6 @@ export default function AdmissionSection() {
           <aside className="admission-intro">
             <span className="admission-intro-kicker">Da el siguiente paso</span>
             <h2>Tu futuro profesional empieza en Virú.</h2>
-            <p>Conoce el proceso de admisión y elige una carrera tecnológica para desarrollar tu futuro profesional.</p>
-            <ul className="admission-highlights">
-              <li><BookOpen size={19} aria-hidden="true" /><span>Programas profesionales para distintos sectores productivos</span></li>
-              <li><Wrench size={19} aria-hidden="true" /><span>Aprendizaje técnico con orientación práctica</span></li>
-              <li><MapPin size={19} aria-hidden="true" /><span>Formación en el Instituto de Educación Superior Tecnológico Público Virú</span></li>
-            </ul>
           </aside>
         <article className="admission-card">
           <div className="admission-card-title">
@@ -27,8 +21,6 @@ export default function AdmissionSection() {
             <div><span>PRÓXIMO PROCESO</span><h3>Examen de admisión</h3></div>
           </div>
           <div className="admission-date"><span>Inscripciones abiertas desde</span><strong>04 de enero de 2027</strong></div>
-          <p className="admission-career-label">Elige la carrera que quieres estudiar</p>
-          <ul>{careers.map((career) => <li key={career.slug}>{career.title}</li>)}</ul>
           <details className="registration-disclosure">
             <summary className="btn primary admission-submit">Inscribirse <ArrowRight size={18} /></summary>
             <div className="registration-form-card">
@@ -45,13 +37,12 @@ export default function AdmissionSection() {
                 <label>Seleccione carrera<select name="carrera" defaultValue="" required><option value="" disabled>Elige una carrera</option>{careers.map((career) => <option key={career.slug} value={career.title}>{career.title}</option>)}</select></label>
                 <label>Discapacidad<select name="discapacidad" defaultValue="No"><option>No</option><option>Sí</option><option>Prefiero no decirlo</option></select></label>
                 <label>Sexo<select name="sexo" defaultValue=""><option value="" disabled>Selecciona una opción</option><option>Femenino</option><option>Masculino</option><option>Prefiero no decirlo</option></select></label>
-                <fieldset className="field-wide source-options"><legend>¿Cómo te enteraste del instituto?</legend>{["Web", "Redes sociales", "Televisión", "Radio", "Referidos"].map((source) => <label key={source}><input type="radio" name="referencia" value={source} required />{source}</label>)}</fieldset>
+                <fieldset className="field-wide source-options"><legend>¿Cómo te enteraste del instituto?</legend>{["Web", "Redes sociales", "Referidos"].map((source) => <label key={source}><input type="radio" name="referencia" value={source} required />{source}</label>)}</fieldset>
                 <label className="field-wide">Número de documento del referente <span>(opcional)</span><input name="documento-referente" /></label>
                 <label className="field-wide consent"><input type="checkbox" required />Declaro que la información brindada es verdadera y que cumpliré los requisitos de admisión.</label>
                 <label className="field-wide consent"><input type="checkbox" required />Acepto el tratamiento de mis datos personales para gestionar mi solicitud de admisión.</label>
                 <a className="btn primary registration-send" href="https://wa.me/51970010302?text=Hola%2C%20quiero%20continuar%20mi%20inscripci%C3%B3n%20para%20el%20proceso%20de%20admisi%C3%B3n%202027%20del%20IESTP%20Vir%C3%BA.">Consultar inscripción <Send size={16} /></a>
               </form>
-              <p className="registration-note">Para completar el registro, comunícate con el instituto al +51 970 010 302.</p>
             </div>
           </details>
         </article>

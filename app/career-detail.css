@@ -69,3 +69,36 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 /* Let each program crest sit naturally over the career photo. */
 .career-logo-frame{width:108px;height:108px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible}.career-logo-frame:hover{box-shadow:none}.career-logo{border-radius:0;filter:drop-shadow(0 2px 5px #0018)}.career-detail-program-logo{width:128px;height:128px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 3px 6px #0005)}.career-detail-brand img{padding:0;border-radius:0;background:transparent}
 @media(max-width:620px){.career-logo-frame{width:88px;height:88px;padding:0}.career-detail-program-logo{width:98px;height:98px}}
+
+/* Carrera details follow the shared section rhythm, with a more compact page length. */
+.career-detail { background: #fff; }
+.career-detail-hero { min-height: 440px; }
+.career-detail-hero-content { padding-top: 70px; padding-bottom: 54px; }
+.career-detail-hero h1 { max-width: 760px; font-size: clamp(2.7rem, 5.4vw, 4.8rem); }
+.career-detail-hero p { max-width: 580px; font-size: 1rem; line-height: 1.6; }
+.career-detail-section { padding: 66px 0; }
+.career-detail-about { gap: 36px; }
+.career-detail-section h2,
+.career-detail-cta h2 { font-size: clamp(2.1rem, 3.8vw, 3.15rem); }
+.career-detail-about > p { font-size: 1rem; line-height: 1.65; }
+.career-detail-capabilities { background: #f3f8fc; }
+.career-detail-section-heading { margin-bottom: 26px; }
+.career-capability-grid,
+.career-jobs-grid { gap: 12px; }
+.career-capability-card { min-height: 158px; padding: 20px; }
+.career-detail-icon { margin: 6px 0 17px; }
+.career-job-card { min-height: 156px; padding: 20px; }
+.career-job-card h3 { margin: 14px 0 7px; }
+.career-detail-cta { padding: 62px 0; }
+@media(max-width:900px) {
+  .career-detail-hero { min-height: 410px; }
+  .career-detail-section { padding: 58px 0; }
+}
+@media(max-width:620px) {
+  .career-detail-hero { min-height: 420px; }
+  .career-detail-hero-content { padding-top: 58px; padding-bottom: 46px; }
+  .career-detail-section { padding: 52px 0; }
+  .career-detail-cta { padding: 52px 0; }
+  .career-capability-card,
+  .career-job-card { min-height: 0; }
+}

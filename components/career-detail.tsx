@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import {
-  ArrowLeft, ArrowRight, BadgeCheck, Beef, BookOpen, BookOpenCheck, BriefcaseBusiness,
+  ArrowRight, BadgeCheck, Beef, BookOpen, BookOpenCheck, BriefcaseBusiness,
   Building2, Calculator, ChartColumnIncreasing, Cherry, ClipboardCheck, ClipboardList,
   Boxes, CupSoda, Droplets, Factory, FileSpreadsheet, FlaskConical, GraduationCap, HeartPulse,
   Landmark, MapPinned, Megaphone, Milk, MonitorCog, PackageCheck, Scale, Settings,
@@ -10,6 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Career, CareerIconName } from "../lib/careers";
+import SiteHeader from "../app/site-header";
 
 const careerIcons: Record<CareerIconName, LucideIcon> = {
   MapPinned, ShoppingCart, Settings, GraduationCap, ShieldCheck, Cherry, HeartPulse,
@@ -21,8 +22,6 @@ const careerIcons: Record<CareerIconName, LucideIcon> = {
 
 export default function CareerDetail({ career }: { career: Career }) {
   const pageRef = useRef<HTMLElement>(null);
-  const whatsappMessage = `Hola, me interesa la carrera de ${career.title} y quisiera recibir más información.`;
-  const whatsappUrl = `https://wa.me/51970010302?text=${encodeURIComponent(whatsappMessage)}`;
 
   useEffect(() => {
     const page = pageRef.current;
@@ -48,24 +47,14 @@ export default function CareerDetail({ career }: { career: Career }) {
 
   return (
     <main className="career-detail" ref={pageRef}>
-      <header className="career-detail-nav">
-        <div className="wrap">
-          <a href="/#carreras" className="career-detail-back">
-            <ArrowLeft size={17} aria-hidden="true" />
-            Volver a carreras
-          </a>
-          <a href="/" className="career-detail-brand"><img src="/logos/instituto-general-integrado.webp" alt=""/><span>IES Tecnológico Virú</span></a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="career-detail-hero">
         <img className="career-detail-hero-image" src={career.image} alt="" fetchPriority="high" />
         <div className="career-detail-hero-shade" />
         <div className="career-detail-hero-content wrap" data-reveal>
-          <span className="career-duration">{career.duration} de formación</span>
           <img className="career-detail-program-logo" src={career.logo} alt={`Logo de ${career.title}`} />
           <h1>{career.title}</h1>
-          <p>{career.description}</p>
         </div>
       </section>
 
@@ -123,7 +112,7 @@ export default function CareerDetail({ career }: { career: Career }) {
         <div className="wrap">
           <span className="eyebrow light">DA EL SIGUIENTE PASO</span>
           <h2>¿Te interesa esta carrera?</h2>
-          <a className="btn primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+          <a className="btn primary" href="/admision">
             Postula ahora <ArrowRight size={17} aria-hidden="true" />
           </a>
         </div>

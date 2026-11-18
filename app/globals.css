@@ -1665,8 +1665,8 @@ body h6 {
 
 /* Columna de contacto agregada al pie institucional. */
 .footer { grid-template-columns: 1.45fr .78fr 1.1fr 1fr; gap: 24px; }
-.footer-contact p,
-.footer-contact > a {
+.footer > div.footer-contact p,
+.footer > div.footer-contact > a {
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -1675,8 +1675,15 @@ body h6 {
   font-size: .79rem;
   line-height: 1.55;
 }
-.footer-contact > a { align-items: center; }
-.footer-contact svg { flex: 0 0 16px; color: #77e2e3; }
+.footer > div.footer-contact > a { display: flex; align-items: center; }
+.footer > div.footer-contact svg { flex: 0 0 16px; color: #77e2e3; }
+.footer > div.footer-contact > .footer-address {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 8px;
+}
+.footer-address span { display: block; }
 @media (max-width: 800px) {
   .footer { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 }

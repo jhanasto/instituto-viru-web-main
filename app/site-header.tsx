@@ -16,13 +16,13 @@ export default function SiteHeader() {
           <summary>Inicio <ChevronRight size={14} /></summary>
           <div className="university-dropdown">
             <a onClick={() => setMenu(false)} href="/#inicio">Inicio</a>
+            <a onClick={() => setMenu(false)} href="/#nosotros">Nosotros</a>
             <a onClick={() => setMenu(false)} href="/historia">Historia</a>
-            <a onClick={() => setMenu(false)} href="/#valores">Nuestros Valores</a>
             <a onClick={() => setMenu(false)} href="/autoridades">Autoridades</a>
           </div>
         </details>
         <a onClick={() => setMenu(false)} href="/carreras">Carreras</a>
-        <a onClick={() => setMenu(false)} href="/#noticias">Noticias</a>
+        <a onClick={() => setMenu(false)} href="/noticias">Noticias</a>
         <a onClick={() => setMenu(false)} href="/#contacto">Contacto</a>
         <a onClick={() => setMenu(false)} href="/admision">Admisión</a>
       </nav>
