@@ -31,6 +31,7 @@ export default function AdmissionSection() {
                 <label>Nombres<input name="nombres" autoComplete="given-name" required /></label>
                 <label>Apellido paterno<input name="apellido-paterno" autoComplete="family-name" required /></label>
                 <label>Apellido materno<input name="apellido-materno" required /></label>
+                <label>DNI<input name="dni" type="text" inputMode="numeric" autoComplete="off" pattern="[0-9]{8}" maxLength={8} minLength={8} title="Ingresa los 8 dígitos de tu DNI" required /></label>
                 <label>Celular<input name="celular" type="tel" autoComplete="tel" required /></label>
                 <label className="field-wide">Correo electrónico<input name="correo" type="email" autoComplete="email" required /></label>
                 <label className="field-wide">Dirección<input name="direccion" autoComplete="street-address" required /></label>
