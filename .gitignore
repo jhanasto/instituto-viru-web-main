@@ -9,7 +9,10 @@
 /.vinext/
 /dist/
 /out/
-/build/
+!/build/
+/build/*
+!/build/sites-vite-plugin.ts
+!/build/sites-vite-plugin.LICENSE
 
 # Local databases and runtime state
 /.wrangler/
