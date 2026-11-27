@@ -20,6 +20,7 @@ export type Career = {
   title: string;
   description: string;
   duration: string;
+  studyPeriod?: string;
   image: string;
   logo: string;
   cardIcon: CareerCardIconName;
@@ -31,8 +32,9 @@ export const careers: Career[] = [
   {
     slug: "produccion-agropecuaria",
     title: "Producción Agropecuaria",
-    description: "Aprende a desarrollar actividades agrícolas y pecuarias con enfoque sostenible.",
+    description: "El profesional técnico en Agropecuaria desarrolla habilidades para diseñar, generar y conducir programas y empresas en el sector agropecuario, promoviendo el uso de los recursos, la prevención y el mantenimiento del medio ambiente.",
     duration: "3 años",
+    studyPeriod: "06 Semestres Académicos",
     image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=85",
     logo: "/logos/produccion-agropecuaria-integrado.webp",
     cardIcon: "Sparkles",
@@ -58,8 +60,9 @@ export const careers: Career[] = [
   {
     slug: "contabilidad",
     title: "Contabilidad",
-    description: "Organiza y analiza información contable para apoyar la gestión de empresas.",
+    description: "El profesional técnico en Contabilidad cuenta con una sólida formación y está comprometido con el cambio y el desarrollo. Actúa con equilibrio, sentido crítico y conocimiento de la realidad en la que se desenvuelve; su participación es relevante para una adecuada toma de decisiones en la gestión empresarial.",
     duration: "3 años",
+    studyPeriod: "06 Semestres Académicos",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85",
     logo: "/logos/contabilidad-integrado.webp",
     cardIcon: "Award",
@@ -85,8 +88,9 @@ export const careers: Career[] = [
   {
     slug: "industrias-alimentarias",
     title: "Industrias Alimentarias",
-    description: "Conoce procesos de transformación, conservación y control de calidad de alimentos.",
+    description: "El profesional técnico en Industrias Alimentarias cuenta con la capacidad, habilidad y destreza técnica necesarias para desempeñarse eficientemente en el planeamiento, diseño, control y mantenimiento de plantas industriales alimenticias y afines.",
     duration: "3 años",
+    studyPeriod: "06 Semestres Académicos",
     image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85",
     logo: "/logos/industrias-alimentarias-integrado.webp",
     cardIcon: "Zap",

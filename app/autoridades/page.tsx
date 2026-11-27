@@ -12,16 +12,29 @@ export const metadata: Metadata = {
 type Authority = { name: string; role: string; portrait?: string; logo?: string };
 
 const authorities: Authority[] = [
-  { name: "Wilson Javier Pineda Valverde", role: "Director general" },
-  ...careers.map(({ title, logo }) => ({
-    name: title,
-    role: "Coordinación de carrera",
-    logo,
-  })),
-  { name: "Oficinista (tesorero)", role: "Equipo de apoyo institucional" },
-  { name: "Bibliotecario", role: "Equipo de apoyo institucional" },
-  { name: "Responsable de cómputo", role: "Equipo de apoyo institucional" },
-  { name: "Asistente de taller", role: "Equipo de apoyo institucional" },
+  { role: "Director General", name: "Mg. Wilson Pineda Valverde" },
+  { role: "Jefatura de Unidad Académica", name: "Ing. Zoila Salazar Vigo" },
+  { role: "Jefatura de Calidad", name: "Desconocido" },
+  { role: "Jefatura de Investigación", name: "Desconocido" },
+  { role: "Jefatura de Formación Continua", name: "Desconocido" },
+  { role: "Jefatura de Bienestar Estudiantil", name: "Desconocido" },
+  { role: "Secretaría Académica", name: "Desconocido" },
+  { role: "Jefatura de Unidad Administrativa", name: "Desconocido" },
+  {
+    role: "Coordinador del Programa de Estudios Contabilidad",
+    name: "Desconocido",
+    logo: careers.find(({ title }) => title === "Contabilidad")?.logo,
+  },
+  {
+    role: "Coordinador del Programa de Estudios Industrias Alimentarias",
+    name: "Desconocido",
+    logo: careers.find(({ title }) => title === "Industrias Alimentarias")?.logo,
+  },
+  {
+    role: "Coordinador del Programa de Estudios Producción Agropecuaria",
+    name: "Desconocido",
+    logo: careers.find(({ title }) => title === "Producción Agropecuaria")?.logo,
+  },
 ];
 
 export default function AuthoritiesPage() {
@@ -33,20 +46,23 @@ export default function AuthoritiesPage() {
           <ArrowLeft size={16} aria-hidden="true" />
           Volver al inicio
         </a>
-        <h1>Autoridades</h1>
+        <header className={styles.heading}>
+          <span className={styles.eyebrow}>AUTORIDADES DEL IESTP “VIRÚ”</span>
+          <h1>Nuestras autoridades</h1>
+        </header>
         <ul className={styles.grid}>
           {authorities.map(({ name, role, portrait, logo }) => (
-            <li key={name} className={styles.card}>
+            <li key={role} className={styles.card}>
               <div className={styles.portrait}>
                 {portrait ? (
-                  <img className={styles.photo} src={portrait} alt="" />
+                  <img className={styles.photo} src={portrait} alt={`Fotografía de ${name}`} />
                 ) : (
                   <img className={styles.logo} src={logo ?? "/logos/instituto-general-integrado.webp"} alt="" />
                 )}
               </div>
               <div className={styles.caption}>
-                <h2>{name}</h2>
-                <p>{role}</p>
+                <h2>{role}</h2>
+                <p>{name}</p>
               </div>
             </li>
           ))}

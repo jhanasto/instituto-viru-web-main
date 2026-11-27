@@ -32,7 +32,6 @@ export default function CareersPage() {
                 </div>
                 <div className={styles.caption}>
                   <h2>{career.title}</h2>
-                  <p>{career.description}</p>
                   <span className={styles.link}>Ver detalles <ArrowRight size={17} aria-hidden="true" /></span>
                 </div>
               </a>

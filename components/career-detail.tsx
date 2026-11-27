@@ -63,7 +63,14 @@ export default function CareerDetail({ career }: { career: Career }) {
           <span className="eyebrow">FORMACIÓN PROFESIONAL</span>
           <h2>Sobre la carrera</h2>
         </div>
-        <p>{career.description}</p>
+        <div className="career-detail-about-copy">
+          <p>{career.description}</p>
+          {career.studyPeriod && (
+            <dl className="career-detail-facts">
+              <div><dt>Periodo de estudios</dt><dd>{career.studyPeriod}</dd></div>
+            </dl>
+          )}
+        </div>
       </section>
 
       <section className="career-detail-capabilities career-detail-section" data-reveal>

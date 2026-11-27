@@ -22,7 +22,12 @@
 .career-detail-section{padding:100px 0}
 .career-detail-about{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}
 .career-detail-section h2,.career-detail-cta h2{margin:13px 0 0;font-size:clamp(2.25rem,4vw,3.6rem);line-height:1.02;letter-spacing:-.06em}
-.career-detail-about>p{max-width:720px;margin:0;color:#53697a;font-size:1.16rem;line-height:1.75}
+.career-detail-about-copy{max-width:720px}
+.career-detail-about-copy>p{margin:0;color:#53697a;font-size:1.16rem;line-height:1.75}
+.career-detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 0;padding:0}
+.career-detail-facts>div{padding:15px 17px;border:1px solid #dbe5ef;border-radius:14px;background:#fff}
+.career-detail-facts dt{color:#0876d8;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.career-detail-facts dd{margin:7px 0 0;color:#102e4b;font-size:.94rem;font-weight:700;line-height:1.45}
 .career-detail-capabilities{background:var(--pale)}
 .career-detail-section-heading{max-width:700px;margin-bottom:38px}
 .career-capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
@@ -80,7 +85,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .career-detail-about { gap: 36px; }
 .career-detail-section h2,
 .career-detail-cta h2 { font-size: clamp(2.1rem, 3.8vw, 3.15rem); }
-.career-detail-about > p { font-size: 1rem; line-height: 1.65; }
+.career-detail-about-copy > p { font-size: 1rem; line-height: 1.65; }
+.career-detail-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .career-detail-capabilities { background: #f3f8fc; }
 .career-detail-section-heading { margin-bottom: 26px; }
 .career-capability-grid,
@@ -93,6 +99,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 @media(max-width:900px) {
   .career-detail-hero { min-height: 410px; }
   .career-detail-section { padding: 58px 0; }
+}
+@media(max-width:620px) {
+  .career-detail-about .career-detail-facts { grid-template-columns: 1fr; }
 }
 @media(max-width:620px) {
   .career-detail-hero { min-height: 420px; }
